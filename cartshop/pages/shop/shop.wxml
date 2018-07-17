@@ -1,0 +1,16 @@
+<view class="main">
+	<view wx:if="{{hasList}}">
+		<view class="cart_box">
+			<icon wx:if="{{item.selected}}" type="success" color="green" data-index="{{index}}" class="cart-to-select" bindtap="selectList" />
+			<icon wx:else="circle" class="cart-to-select" data-index="{{index}}" bindtap="selectList" />
+			<image class="cart-thumb" src="{{item.image}}"></image>
+			<text class="cart-name">{{item.title}}</text>
+			<text class="cart-price">${{item.price}}</text>
+			<view class="cart-count-box" >
+				<text class="cart--count-add" bindtap="addCount" data-obj="{{obj}}" data-index="{{index}}">+</text>
+				<text class="cart-count-num">{{item.num}}</text>
+				<text class="cart-count-minus" bindtap="minusCount" data-obj="{{obj}}" data-index="{{index}}">-</text>
+			</view>
+		</view>
+	</view>
+</view>
